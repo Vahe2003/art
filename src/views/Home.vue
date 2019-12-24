@@ -1,16 +1,14 @@
 <template>
-  <v-container id="home">
-      <v-carousel>
-    <v-carousel-item
-      v-for="(item,i) in items"
+  <div>
+      <v-carousel height = "700" show-arrows-on-hover  hide-delimiters continuous cycle dark interval = "5000">
+    <v-carousel-item v-for="(item,i) in items"
       :key="i"
-      :src="item.src"
-      reverse-transition="fade-transition"
       transition="fade-transition"
-    ></v-carousel-item>
+      :src="item.src">
+    </v-carousel-item>
   </v-carousel>
 
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -20,16 +18,16 @@ export default {
   data: () => ({
     items: [
       {
-        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+        src: require('../assets/img/architecture.jpg')
       },
       {
-        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+        src: require('../assets/img/literature.jpg')
       },
       {
-        src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+        src: require('../assets/img/music.jpg')
       },
       {
-        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+        src: require('../assets/img/carpet.png')
       }
     ]
   }),

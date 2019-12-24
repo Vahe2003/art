@@ -1,13 +1,13 @@
 <template>
   <v-app>
     <v-app-bar app color="#6279b8" dark>
-      <img :src="require('@/assets/logo.png')" height="100"/>
-      <v-toolbar-title>Art</v-toolbar-title>
+      <img :src="require('@/assets/logo.png')" height="100" width="130"/>
+      <v-toolbar-title>Armenian Art</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-md-and-down">
-        <v-btn class="mx-1" text to="/">Home</v-btn >
-        <v-btn class="mx-1" text to="/about">About</v-btn >
-        <v-btn class="mx-1" text to="/browse">Browse</v-btn >
+        <v-btn class="mx-1" text to="/"> <v-icon class = "mr-2" color="white">mdi-home </v-icon> Home</v-btn >
+        <v-btn class="mx-1" text to="/about"><v-icon class = "mr-2" color="white">mdi-information </v-icon> About</v-btn >
+        <v-btn class="mx-1" text to="/browse"><v-icon class = "mr-2" color="white">mdi-map-marker </v-icon> Browse</v-btn >
       </v-toolbar-items>
       <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -24,15 +24,15 @@
           v-model="group"
         >
           <v-list-item to="/">
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title><v-icon class = "mr-2" color="#6279b8">mdi-home </v-icon> Home</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/about">
-            <v-list-item-title>About</v-list-item-title>
+            <v-list-item-title><v-icon class = "mr-2" color="#6279b8">mdi-group </v-icon> About</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/browse">
-            <v-list-item-title>Browse</v-list-item-title>
+            <v-list-item-title><v-icon class = "mr-2" color="#6279b8">mdi-image-filter-hdr </v-icon>Browse</v-list-item-title>
           </v-list-item>
 
         </v-list-item-group>
