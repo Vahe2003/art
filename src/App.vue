@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="#2900AA" dark>
+    <v-app-bar app color="#6279b8" dark>
       <img :src="require('@/assets/logo.png')" height="100"/>
       <v-toolbar-title>Art</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -15,6 +15,7 @@
       v-model="drawer"
       absolute
       temporary
+      top
     >
       <v-list
         dense
