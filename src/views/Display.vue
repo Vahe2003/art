@@ -12,9 +12,9 @@
       touch
     >
       <v-carousel-item
-        v-for="(item,i) in items"
+        v-for="(item,i) in info.images"
         :key="i"
-        :src="item.src"
+        :src="item"
         transition="scroll-x-transition"
         reverse-transition="scroll-x-reverse-transition"
       >
@@ -22,7 +22,7 @@
           <v-container fill-height>
             <v-layout align-center>
               <v-flex>
-                <h2 class="display-3 white-text text-center">{{ item.title }}</h2>
+                <h2 class="display-3 white-text text-center">{{ info.title }}</h2>
               </v-flex>
             </v-layout>
           </v-container>
@@ -57,25 +57,21 @@ import Cards from '../components/Cards.vue'
 export default {
   name: 'Display',
   data: () => ({
-    items: [
-      {
-        src: require('../assets/img/slider/carpet.jpg'),
-        title: 'Zvartnots',
-      },
-      {
-        src: require('../assets/img/slider/img1.jpg'),
-        title: 'Zvartnots',
-      },
-      {
-        src: require('../assets/img/slider/zvartnoz.jpg'),
-        title: 'Zvartnots',
-      }
-    ]
+    info: null
   }),
   components: {
     Cards
   },
-  methods: {}
+  methods: {
+    getInfo: async function () {
+      const params = {
+        id: this.$route.params.id
+      }
+      let resp = await axios.get('https://armenian-art.herokuapp.com/getInfo', { params })
+      this.info = resp.data['info']
+      this.loading = false
+    }
+  }
 }
 </script>
 <style scoped>
