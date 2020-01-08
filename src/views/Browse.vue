@@ -1,16 +1,16 @@
 <template>
-  <v-container id="browse">
-  </v-container>
+  <div id="app">
+    <google-map />
+  </div>
 </template>
 
 <script>
+import GoogleMap from "../components/GoogleMap";
+
 export default {
-  name: 'Browse',
-
-  data: () => ({
-  }),
-  methods: {
+  name: "App",
+  components: {
+    GoogleMap
   }
-
-}
+};
 </script>
