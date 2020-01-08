@@ -10,9 +10,10 @@
         <v-text-field
         v-show="searchShow"
           clearable
-          filled
+
           hide-details
           dark
+          single-line
           label = "Search for Places">
         </v-text-field>
       </v-slide-x-reverse-transition>

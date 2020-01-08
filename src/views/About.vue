@@ -106,14 +106,14 @@
       <v-btn
         dark
         icon
-        @click="show = !show"
+        @click="show1 = !show1"
       >
-        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+        <v-icon>{{ show1 ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
       </v-btn>
     </v-card-actions>
 
     <v-expand-transition>
-      <div v-show="show">
+      <div v-show="show1">
         <v-divider></v-divider>
 
         <v-card-text style="color:white">
@@ -148,14 +148,14 @@
       <v-btn
         dark
         icon
-        @click="show = !show"
+        @click="show2 = !show2"
       >
-        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+        <v-icon>{{ show2 ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
       </v-btn>
     </v-card-actions>
 
     <v-expand-transition>
-      <div v-show="show">
+      <div v-show="show2">
         <v-divider></v-divider>
 
         <v-card-text style="color:white">
@@ -235,6 +235,8 @@ export default {
       'mdi-instagram'
     ],
     show: false,
+    show1: false,
+    show2: false,
     fab: false
   }),
   methods: {
