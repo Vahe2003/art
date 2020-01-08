@@ -5,6 +5,7 @@ import About from './views/About.vue'
 import Browse from './views/Browse.vue'
 import Contact from './views/Contact.vue'
 import Display from './views/Display.vue'
+import Add from './views/Submit.vue'
 
 Vue.use(Router)
 
@@ -31,7 +32,7 @@ export default new Router({
       component: Browse
     },
     {
-      path: '/display',
+      path: '/display/:id',
       name: 'display',
       component: Display
     },
@@ -39,6 +40,11 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/submit',
+      name: 'submit',
+      component: Add
     }
   ]
 })

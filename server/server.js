@@ -10,10 +10,10 @@ const pool = require('./database.js')
 //HTTPS redirect middleware
 function ensureSecure(req, res, next) {
   //Heroku stores the origin protocol in a header variable. The app itself is isolated within the dyno and all request objects have an HTTP protocol.
-  if (req.get('X-Forwarded-Proto')=='https' || req.hostname == 'localhost') {
+  if (req.get('X-Forwarded-Proto') == 'https' || req.hostname == 'localhost') {
     //Serve Vue App by passing control to the next middleware
     next();
-  } else if(req.get('X-Forwarded-Proto')!='https' && req.get('X-Forwarded-Port')!='443'){
+  } else if (req.get('X-Forwarded-Proto') != 'https' && req.get('X-Forwarded-Port') != '443') {
     //Redirect if not HTTP with original request URL
     res.redirect('https://' + req.hostname + req.url);
   }
@@ -68,7 +68,7 @@ app.get('/getArt', (req, res) => {
         res.status(200)
         res.json(response)
       });
-      client.release()
+    client.release()
   })
 })
 
@@ -94,7 +94,7 @@ app.get('/getInfo', (req, res) => {
         res.status(200)
         res.json(response)
       });
-      client.release()
+    client.release()
   })
 })
 
@@ -104,7 +104,7 @@ app.post('/postArt', async (req, res) => {
   let images = req.body.images
   let insertImages = '{'
   let i = 0
-  for(i; i < images.length-1; i++) {
+  for (i; i < images.length - 1; i++) {
     insertImages += '"' + images[i] + '", '
   }
   insertImages += '"' + images[i] + '"}'
@@ -128,7 +128,7 @@ app.post('/postArt', async (req, res) => {
         res.status(200)
         res.json(resp.rows[0].id)
       });
-      client.release()
+    client.release()
   });
 });
 

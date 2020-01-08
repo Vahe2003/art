@@ -6,33 +6,34 @@
       </v-btn>
       <v-toolbar-title class = "display-1">ART</v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-slide-x-reverse-transition>
+        <v-text-field
+        v-show="searchShow"
+          clearable
+          filled
+          hide-details
+          dark
+          label = "Search for Places">
+        </v-text-field>
+      </v-slide-x-reverse-transition>
+      <v-btn icon @click="searchShow = !searchShow">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
       <v-toolbar-items class="hidden-md-and-down">
         <v-btn class="mx-1" text to="/"> <v-icon class = "mr-2" color="white">mdi-home </v-icon> Home</v-btn>
         <v-btn class="mx-1" text to="/about"><v-icon class = "mr-2" color="white">mdi-information </v-icon> About</v-btn >
         <v-btn class="mx-1" text to="/browse"><v-icon class = "mr-2" color="white">mdi-map-marker </v-icon> Browse</v-btn >
          <v-btn class="mx-1" text to="/contact"><v-icon class = "mr-2" color="white">mdi-help </v-icon> Contact</v-btn >
-        <v-btn class="mx-1" text to="/display"><v-icon class = "mr-2" color="white">mdi-human </v-icon> Display</v-btn >
-    <v-toolbar color="#3d3d3d" flat height="auto">
-      <v-text-field
-        hide-details
-        prepend-icon="mdi-web"
-        single-line
-        label = "Search for Places"
-      ></v-text-field>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-toolbar>
+      <v-btn class="mx-1" text to="/submit"><v-icon class = "mr-2" color="white">mdi-plus </v-icon> Add</v-btn>
       </v-toolbar-items>
       <v-app-bar-nav-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-app-bar>
     <v-navigation-drawer
       v-model="drawer"
-      absolute
-      temporary
-      height="auto"
-      width="100%"
+      app
+      dark
+      disable-route-watcher
+      disable-resize-watcher
     >
        <v-list
         dense
@@ -41,36 +42,20 @@
           v-model="group"
         >
           <v-list-item to="/">
-            <v-list-item-title><v-icon class = "mr-2" color="#3d3d3d">mdi-home </v-icon> Home</v-list-item-title>
+            <v-list-item-title><v-icon class = "mr-2" dark>mdi-home </v-icon> Home</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/about">
-            <v-list-item-title><v-icon class = "mr-2" color="#3d3d3d">mdi-information </v-icon> About</v-list-item-title>
+            <v-list-item-title><v-icon class = "mr-2" dark>mdi-information </v-icon> About</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/browse">
-            <v-list-item-title><v-icon class = "mr-2" color="#3d3d3d">mdi-map-marker </v-icon>Browse</v-list-item-title>
+            <v-list-item-title><v-icon class = "mr-2" dark>mdi-map-marker </v-icon>Browse</v-list-item-title>
           </v-list-item>
 
           <v-list-item to="/contact">
-            <v-list-item-title><v-icon class = "mr-2" color="#3d3d3d">mdi-help </v-icon>Contact</v-list-item-title>
+            <v-list-item-title><v-icon class = "mr-2" dark>mdi-help </v-icon>Contact</v-list-item-title>
           </v-list-item>
-           <v-list-item to="/display">
-            <v-list-item-title><v-icon class = "mr-2" color="#3d3d3d">mdi-human </v-icon>Display(Single Page for Cards)</v-list-item-title>
-          </v-list-item>
-    <v-toolbar>
-      <v-text-field
-        color="#3d3d3d"
-        hide-details
-        prepend-icon="mdi-web"
-        single-line
-       label = "Search for Places"
-      ></v-text-field>
-
-      <v-btn icon>
-        <v-icon color="#3d3d3d">mdi-magnify</v-icon>
-      </v-btn>
-    </v-toolbar>
 
         </v-list-item-group>
       </v-list>
@@ -87,7 +72,8 @@ import Cards from '@/components/Cards.vue'
 export default {
   data: () => ({
     drawer: false,
-    group: null
+    group: null,
+    searchShow: false
   }),
   watch: {
     group () {

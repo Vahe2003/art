@@ -35,16 +35,13 @@
                       aria-required
                       :rules="emailRules"
                     ></v-text-field>
-                    <v-text-field
-                      class="my-6"
-                      error-count="3"
-                      clearable
+                    <v-textarea
                       type="subject"
                       v-model="subject"
                       label="Subject"
                       aria-required
                       :rules="[v => !!v || 'Subject is required']"
-                    ></v-text-field>
+                    ></v-textarea>
                     <v-btn :disabled="!valid" color="success">Send the Message</v-btn>
                   </v-col>
                 </v-row>

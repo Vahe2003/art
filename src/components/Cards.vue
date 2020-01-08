@@ -11,7 +11,7 @@
             class="text--primary block-with-text"
           >{{ card.description }}</v-card-text>
           <v-card-actions>
-            <v-btn color="orange" text>Explore</v-btn>
+            <v-btn @click="$router.push({path: `display/${card.id}`})" color="orange" text>Explore</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -35,6 +35,15 @@ export default {
       console.log(resp.data)
       console.log(resp.data['cards'])
       this.cards = resp.data['cards']
+    },
+    addLink: function () {
+      this.images.push(this.item)
+      this.item = null
+    },
+    postArt: async function () {
+      let response = await axios.post('https://armenian-art.herokuapp.com/postArt', { title: this.title, description: this.description, images: this.images })
+      let id = response.data
+      this.$router.push(`/display/${id}`)
     }
   },
   created () {
