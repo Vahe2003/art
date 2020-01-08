@@ -15,8 +15,6 @@
          <h1 class="text-center" style="font-family: algerian; font-size:60px;">Our Mission</h1>
       </v-parallax>
  <div class="divider">
-      <marquee :class="{'display-0': $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.smAndUp}" class = "text-uppercase my-2" behavior="scroll" direction="left" scrollamount="18">Our Mission is pretty important! So please read it
-</marquee>
     </div>
 <v-row justify="center" align="center">
   <v-col cols="12" xl="7" lg="6">
@@ -44,8 +42,6 @@
 </v-col>
 </v-row>
 <div class="divider">
-      <marquee scrolldelay="100" :class="{'display-0': $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.smAndUp}" class = "text-uppercase my-2" behavior="scroll" direction="left" scrollamount="12">It's not necessary, but we would like if you supported us :)
-</marquee>
     </div>
  <v-parallax
            height="300"
