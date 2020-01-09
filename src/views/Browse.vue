@@ -1,7 +1,7 @@
 <template>
   <div id="app">
   <div class="map-responsive">
- <iframe src="https://www.google.com/maps/d/embed?mid=1LMt8faTipbwli79OXvEpeyX9e2sww7jM" width="100%" height="100%" frameborder="0" style="border:0"></iframe>
+ <iframe src="https://www.google.com/maps/d/embed?mid=1LMt8faTipbwli79OXvEpeyX9e2sww7jM" width="1920px" height="1080px" allowfullscreen="true"></iframe>
   </div>
   </div>
 </template>
