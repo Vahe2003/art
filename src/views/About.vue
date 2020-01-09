@@ -293,6 +293,8 @@ export default {
 </script>
 <style>
 .row{
-  margin-right:0px;
+  margin-right:0px !important;
+  margin-left:0px !important;
 }
+
 </style>

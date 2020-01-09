@@ -1,7 +1,7 @@
 <template>
   <v-row style="height: 100%;" justify="center" align="center">
     <v-col cols="12">
-      <v-card class="ma-12" outlined>
+      <v-card :class="{'ma-0': $vuetify.breakpoint.smAndDown, 'ma-12': $vuetify.breakpoint.mdAndUp}" outlined>
         <v-row>
           <v-col cols="12" md="6">
             <v-form v-model="valid">
@@ -49,7 +49,17 @@
             </v-form>
           </v-col>
       <v-col cols="12" md="6">
-        <v-img aspect-ratio="1.77" height="100%" src="@/assets/img/contact/contact.jpg"></v-img>
+        <v-img aspect-ratio="1.77" height="100%" src="@/assets/img/contact/contact.jpg" lazy-src="@/assets/img/contact/contact.jpg">
+         <template v-slot:placeholder>
+        <v-row
+          class="fill-height ma-0"
+          align="center"
+          justify="center"
+        >
+          <v-progress-circular indeterminate color="grey"></v-progress-circular>
+        </v-row>
+      </template>
+        </v-img>
       </v-col>
       </v-row>
     </v-card>
