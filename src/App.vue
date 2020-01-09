@@ -84,7 +84,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   @import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
   .v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-drawer--temporary:not(.v-navigation-drawer--close){
     height: 100%;

@@ -36,12 +36,23 @@
       </v-carousel-item>
     </v-carousel>
     <div class="divider">
-      <marquee v-for="fact in facts" :key="fact.id" :class="{'display-0': $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.smAndUp}" class = "text-uppercase my-2" behavior="scroll" direction="left" scrollamount="18">{{ fact.text }}
+      <marquee :class="{'display-0': $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.smAndUp}" class = "text-uppercase my-2" behavior="scroll" direction="left" scrollamount="18">{{ facts[fact_id].text}}
 </marquee>
     </div>
       <v-parallax
-           height="300"
-           src="../assets/img/parallax/hraparak.jpg">
+          height="300"
+          key = "../assets/img/parallax/hraparak.jpg"
+          lazy-src="../assets/img/parallax/hraparak.jpg"
+          src="../assets/img/parallax/hraparak.jpg">
+      <template v-slot:placeholder>
+        <v-row
+          class="fill-height ma-0"
+          align="center"
+          justify="center"
+        >
+          <v-progress-circular indeterminate color="grey"></v-progress-circular>
+        </v-row>
+      </template>
           <h2 :class="{'display-0': $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.mdAndUp}" class = "text-center text-uppercase">The Treasures of Armenia</h2>
       </v-parallax>
     <v-container>
@@ -135,9 +146,37 @@ export default {
       'mdi-linkedin',
       'mdi-instagram'
     ],
+    fact_id: Math.floor(Math.random() * 10),
     facts: [
       {
-        id: 1, text: 'Interesting fact: Armenia was the first country to have adopted Christianity as its state religion'
+        text: 'Interesting fact #1: Chess is a compulsory subject in schools'
+      },
+      {
+        text: 'Interesting fact #2: Armenia was the first country to have adopted Christianity as its state religion'
+      },
+      {
+        text: 'Interesting fact #3: Armenia is one of the only mono ethnic countries in the world'
+      },
+      {
+        text: 'Interesting fact #4: The first church in the world was built in Armenia'
+      },
+      {
+        text: 'Interesting fact #5: An estimated 1.5 million Armenians were killed during the Genocide'
+      },
+      {
+        text: 'Interesting fact #6: Armenia is one of the oldest wine producing country in the world'
+      },
+      {
+        text: 'Interesting fact #7: Armenians bake their lavash underground in a tonir'
+      },
+      {
+        text: 'Interesting fact #8: The entire country worships Mt Ararat which is also the national symbol of Armenia'
+      },
+      {
+        text: 'Interesting fact #9: The apricot is one of the symbols of Armenia'
+      },
+      {
+        text: 'Interesting fact #10: Yerevan is also known as the “pink city”'
       }
     ]
   }),

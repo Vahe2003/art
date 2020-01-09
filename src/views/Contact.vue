@@ -59,6 +59,7 @@
 
 <script>
 export default {
+  
   data: () => ({
     show1: false,
     firstname: null,
@@ -80,5 +81,6 @@ export default {
       ];
     }
   }
-};
+}
+
 </script>

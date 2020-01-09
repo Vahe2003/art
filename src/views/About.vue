@@ -1,15 +1,17 @@
 <template>
-  <div id="about">
+  <div>
      <v-parallax
            height="300"
-           src="../assets/img/parallax/mountain.jpg">
-           <template v-slot:placeholder>
+           src="../assets/img/parallax/mountain.jpg"
+           lazy-src="../assets/img/parallax/mountain.jpg"
+           key="../assets/img/parallax/mountain.jpg">
+            <template v-slot:placeholder>
         <v-row
           class="fill-height ma-0"
           align="center"
           justify="center"
         >
-          <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+          <v-progress-circular indeterminate color="grey"></v-progress-circular>
         </v-row>
       </template>
          <h1 class="text-center" style="font-family: algerian; font-size:60px;">Our Mission</h1>
@@ -45,13 +47,33 @@
     </div>
  <v-parallax
            height="300"
-           src="../assets/img/parallax/team.jpg">
+           src="../assets/img/parallax/team.jpg"
+           lazy-src="../assets/img/parallax/team.jpg"
+           key="../assets/img/parallax/team.jpg">
+      <template v-slot:placeholder>
+        <v-row
+          class="fill-height ma-0"
+          align="center"
+          justify="center"
+        >
+          <v-progress-circular indeterminate color="grey"></v-progress-circular>
+        </v-row>
+      </template>
          <h1 class="text-center" style="font-family: algerian; font-size:60px;">Our Team</h1>
       </v-parallax>
     <v-row justify="center" align="center">
     <v-col cols="12" lg ="4" md="6" sm="12">
         <v-card shaped color= "#008DD1" class="mx-auto overlay" max-width="400">
-          <v-img class="white--text align-end" gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" height="260px" src="../assets/img/about/Vahe.jpg">
+          <v-img class="white--text align-end" gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" height="260px" src="../assets/img/about/Vahe.jpg" lazy-src="../assets/img/about/Vahe.jpg">
+           <template v-slot:placeholder>
+        <v-row
+          class="fill-height ma-0"
+          align="center"
+          justify="center"
+        >
+          <v-progress-circular indeterminate color="grey"></v-progress-circular>
+        </v-row>
+      </template>
             <v-card-title style="font-family: cursive;">Vahe Khachatryan</v-card-title>
           </v-img>
           <v-card color="#05aeff" class="ma-7">
@@ -93,7 +115,16 @@
       </v-col>
       <v-col cols="12"  lg ="4" md="6" sm="12">
         <v-card shaped color= "#008DD1" class="mx-auto overlay" max-width="400">
-          <v-img class="white--text align-end" gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" height="260px" src="../assets/img/about/Gor.jpg">
+          <v-img class="white--text align-end" gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" height="260px" src="../assets/img/about/Gor.jpg" lazy-src="../assets/img/about/Gor.jpg">
+              <template v-slot:placeholder>
+        <v-row
+          class="fill-height ma-0"
+          align="center"
+          justify="center"
+        >
+          <v-progress-circular indeterminate color="grey"></v-progress-circular>
+        </v-row>
+      </template>
             <v-card-title style="font-family: cursive;">Gor Margaryan</v-card-title>
           </v-img>
           <v-card color="#05aeff" class="ma-7">
@@ -135,7 +166,16 @@
       </v-col>
       <v-col cols="12"  lg="4" md="12" sm="12">
         <v-card shaped color= "#008DD1" class="mx-auto overlay" max-width="400">
-          <v-img class="white--text align-end" gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" height="260px" src="../assets/img/about/Ani.jpg">
+          <v-img class="white--text align-end" gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)" height="260px" src="../assets/img/about/Ani.jpg" lazy-src="../assets/img/about/Ani.jpg">
+             <template v-slot:placeholder>
+        <v-row
+          class="fill-height ma-0"
+          align="center"
+          justify="center"
+        >
+          <v-progress-circular indeterminate color="grey"></v-progress-circular>
+        </v-row>
+      </template>
             <v-card-title style="font-family: cursive;">Ani Avetisyan</v-card-title>
           </v-img>
           <v-card color="#05aeff" class="ma-7">
@@ -251,3 +291,8 @@ export default {
   }
 }
 </script>
+<style>
+.row{
+  margin-right:0px;
+}
+</style>
