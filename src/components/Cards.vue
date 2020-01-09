@@ -54,7 +54,7 @@ export default {
 <style>
 .block-with-text {
   overflow: hidden;
-  line-height: 1.7rem;
+  line-height: 1.5rem;
   max-height: 3em;
 }
 .overlay .v-image__image{

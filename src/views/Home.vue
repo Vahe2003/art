@@ -121,6 +121,11 @@ export default {
         src: require('../assets/img/slider/carpet.png'),
         title: 'Armenian Carpets',
         description: 'Read More in this website'
+      },
+      {
+        src: require('../assets/img/slider/cinema.jpg'),
+        title: 'Armenian Films',
+        description: 'Read More in this website'
       }
     ],
     icons: [
