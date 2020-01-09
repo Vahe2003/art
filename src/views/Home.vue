@@ -41,18 +41,7 @@
     </div>
       <v-parallax
           height="300"
-          key = "../assets/img/parallax/hraparak.jpg"
-          lazy-src="../assets/img/parallax/hraparak.jpg"
           src="../assets/img/parallax/hraparak.jpg">
-      <template v-slot:placeholder>
-        <v-row
-          class="fill-height ma-0"
-          align="center"
-          justify="center"
-        >
-          <v-progress-circular indeterminate color="grey"></v-progress-circular>
-        </v-row>
-      </template>
           <h2 :class="{'display-0': $vuetify.breakpoint.smAndDown, 'display-1': $vuetify.breakpoint.mdAndUp}" class = "text-center text-uppercase">The Treasures of Armenia</h2>
       </v-parallax>
     <v-container>

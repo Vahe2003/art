@@ -42,7 +42,20 @@
                       aria-required
                       :rules="[v => !!v || 'Subject is required']"
                     ></v-textarea>
-                    <v-btn :disabled="!valid" color="success">Send the Message</v-btn>
+                    <v-btn  @click="loader = 'loading', alert = !alert" :disabled="!valid" :loading="loading"
+     color="success">Send the Message</v-btn>
+    <v-alert
+      :value="alert"
+      color="success"
+      dark
+      border="right"
+      icon="mdi-send"
+      transition="scale-transition"
+      class = "my-2"
+      dismissible
+    >
+      Your Message has been sent
+    </v-alert>
                   </v-col>
                 </v-row>
               </v-container>
@@ -71,6 +84,9 @@
 export default {
   
   data: () => ({
+     loader: null,
+    loading: false,
+    alert: false,
     show1: false,
     firstname: null,
     lastname: null,
@@ -90,7 +106,17 @@ export default {
         v => !!v || "Confirmation E-mail is required"
       ];
     }
-  }
+  },
+   watch: {
+      loader () {
+        const l = this.loader
+        this[l] = !this[l]
+
+        setTimeout(() => (this[l] = false), 3000)
+
+        this.loader = null
+      },
+    },
 }
 
 </script>

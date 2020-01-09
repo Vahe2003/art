@@ -3,17 +3,7 @@
      <v-parallax
            height="300"
            src="../assets/img/parallax/mountain.jpg"
-           lazy-src="../assets/img/parallax/mountain.jpg"
-           key="../assets/img/parallax/mountain.jpg">
-            <template v-slot:placeholder>
-        <v-row
-          class="fill-height ma-0"
-          align="center"
-          justify="center"
-        >
-          <v-progress-circular indeterminate color="grey"></v-progress-circular>
-        </v-row>
-      </template>
+           >
          <h1 class="text-center" style="font-family: algerian; font-size:60px;">Our Mission</h1>
       </v-parallax>
  <div class="divider">
@@ -47,18 +37,7 @@
     </div>
  <v-parallax
            height="300"
-           src="../assets/img/parallax/team.jpg"
-           lazy-src="../assets/img/parallax/team.jpg"
-           key="../assets/img/parallax/team.jpg">
-      <template v-slot:placeholder>
-        <v-row
-          class="fill-height ma-0"
-          align="center"
-          justify="center"
-        >
-          <v-progress-circular indeterminate color="grey"></v-progress-circular>
-        </v-row>
-      </template>
+           src="../assets/img/parallax/team.jpg">
          <h1 class="text-center" style="font-family: algerian; font-size:60px;">Our Team</h1>
       </v-parallax>
     <v-row justify="center" align="center">
