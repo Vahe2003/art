@@ -1,7 +1,7 @@
 <template>
   <div id="app">
   <div class="map-responsive">
- <iframe src="https://www.google.com/maps/d/embed?mid=1LMt8faTipbwli79OXvEpeyX9e2sww7jM" width="1920px" height="1080px" allowfullscreen="true"></iframe>
+ <iframe src="https://www.google.com/maps/d/embed?mid=1LMt8faTipbwli79OXvEpeyX9e2sww7jM" width="100%" height="100%" allowfullscreen></iframe>
   </div>
   </div>
 </template>
@@ -19,13 +19,17 @@ export default {
 </script>
 
 <style>
+#app{
+  height: 100vh;
+  position: relative;
+}
 .map-responsive{
     overflow:hidden;
     padding: 0;
     padding-bottom:56.25%;
     position:relative;
     margin: 0;
-    height:0;
+    height:100%;
 }
 .map-responsive iframe{
     left:0;
