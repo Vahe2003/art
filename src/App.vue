@@ -58,6 +58,10 @@
             <v-list-item-title><v-icon class = "mr-2" dark>mdi-help </v-icon>Contact</v-list-item-title>
           </v-list-item>
 
+          <v-list-item to="/submit">
+            <v-list-item-title><v-icon class = "mr-2" dark>mdi-plus</v-icon>Add</v-list-item-title>
+          </v-list-item>
+
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -69,7 +73,6 @@
   </v-app>
 </template>
 <script>
-import Cards from '@/components/Cards.vue'
 export default {
   data: () => ({
     drawer: false,
